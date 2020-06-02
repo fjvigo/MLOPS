@@ -29,3 +29,11 @@ clf = clf.fit(X_train, Y_train)
 clf.predict(X_validation)
 accuracy = accuracy_score(Y_validation, clf.predict(X_validation))
 print(accuracy)
+
+#ADDING A LINEAR MODEL
+initial_lm_mod = linear_model.LogisticRegression()
+initial_lm_mod.fit(X_train, Y_train)
+initial_lm_mod.predict(X_validation)
+accuracy_linear = accuracy_score(Y_validation, initial_lm_mod.predict(X_validation))
+print("The linear model has an accuracy of = {0:.4f}".format(accuracy_linear))
+print("The decision tree outperforms the linear model by = {0:.4f}".format(accuracy-accuracy_linear))
