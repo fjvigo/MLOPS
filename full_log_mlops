@@ -1,0 +1,378 @@
+(MLOPS) MacBook-Pro-de-Francisco:~ franciscovigo$ cd /Users/franciscovigo/Desktop/IE.academics/S4/MLOPS/Individual_Assignment
+(MLOPS) MacBook-Pro-de-Francisco:Individual_Assignment franciscovigo$ mkdir Work
+(MLOPS) MacBook-Pro-de-Francisco:Individual_Assignment franciscovigo$ cd Work
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git config --global user.name "fjvigo"
+warning: user.name has multiple values
+error: cannot overwrite multiple values with a single value
+       Use a regexp, --add or --replace-all to change user.name.
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git config --global --lis
+filter.lfs.required=true
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+user.name=fjvigo
+user.email=56862470+fjvigo@users.noreply.github.com
+user.name==
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git config --global --list
+filter.lfs.required=true
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+user.name=fjvigo
+user.email=56862470+fjvigo@users.noreply.github.com
+user.name==
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git init
+Initialized empty Git repository in /Users/franciscovigo/Desktop/IE.academics/S4/MLOPS/Individual_Assignment/Work/.git/
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git remote add origin https://github.com/fjvigo/MLOPS.git
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ ls
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ vim example.py
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ ls
+example.py
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ python example.py 
+First example
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	example.py
+
+nothing added to commit but untracked files present (use "git add" to track)
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git add .
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   example.py
+
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git commit -m "Initial example: Print First Example"
+[master (root-commit) e9e2cf1] Initial example: Print First Example
+ 1 file changed, 1 insertion(+)
+ create mode 100644 example.py
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ ls
+example.py
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git branch
+* master
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git push -u origin master
+Username for 'https://github.com': fjvigo
+Password for 'https://fjvigo@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/fjvigo/MLOPS.git/'
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git push -u origin master
+Username for 'https://github.com': fjvigo
+Password for 'https://fjvigo@github.com': 
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 268 bytes | 268.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/fjvigo/MLOPS.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ ls
+example.py
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ vim ml_model.py
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ ls
+example.py	ml_model.py
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git add .
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   ml_model.py
+
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git commit -m "Creating a simple model using Iris-Setosa dataset"
+[master f47b58d] Creating a simple model using Iris-Setosa dataset
+ 1 file changed, 31 insertions(+)
+ create mode 100644 ml_model.py
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ python ml_model.py 
+Traceback (most recent call last):
+  File "ml_model.py", line 1, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ conda install pandas
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /opt/anaconda3/envs/MLOPS
+
+  added / updated specs:
+    - pandas
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    mkl-service-2.3.0          |   py36hfbe908c_0         202 KB
+    mkl_fft-1.0.15             |   py36h5e564d8_0         139 KB
+    mkl_random-1.1.1           |   py36h959d312_0         290 KB
+    numpy-1.18.1               |   py36h7241aed_0           5 KB
+    numpy-base-1.18.1          |   py36h3304bdc_1         4.0 MB
+    pandas-1.0.3               |   py36h6c726b0_0         7.9 MB
+    python-dateutil-2.8.1      |             py_0         215 KB
+    pytz-2020.1                |             py_0         184 KB
+    six-1.14.0                 |           py36_0          26 KB
+    ------------------------------------------------------------
+                                           Total:        12.9 MB
+
+The following NEW packages will be INSTALLED:
+
+  blas               pkgs/main/osx-64::blas-1.0-mkl
+  intel-openmp       pkgs/main/osx-64::intel-openmp-2019.4-233
+  libgfortran        pkgs/main/osx-64::libgfortran-3.0.1-h93005f0_2
+  mkl                pkgs/main/osx-64::mkl-2019.4-233
+  mkl-service        pkgs/main/osx-64::mkl-service-2.3.0-py36hfbe908c_0
+  mkl_fft            pkgs/main/osx-64::mkl_fft-1.0.15-py36h5e564d8_0
+  mkl_random         pkgs/main/osx-64::mkl_random-1.1.1-py36h959d312_0
+  numpy              pkgs/main/osx-64::numpy-1.18.1-py36h7241aed_0
+  numpy-base         pkgs/main/osx-64::numpy-base-1.18.1-py36h3304bdc_1
+  pandas             pkgs/main/osx-64::pandas-1.0.3-py36h6c726b0_0
+  python-dateutil    pkgs/main/noarch::python-dateutil-2.8.1-py_0
+  pytz               pkgs/main/noarch::pytz-2020.1-py_0
+  six                pkgs/main/osx-64::six-1.14.0-py36_0
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages
+mkl_random-1.1.1     | 290 KB    | ################################################################################################################# | 100% 
+pytz-2020.1          | 184 KB    | ################################################################################################################# | 100% 
+mkl-service-2.3.0    | 202 KB    | ################################################################################################################# | 100% 
+numpy-base-1.18.1    | 4.0 MB    | ################################################################################################################# | 100% 
+mkl_fft-1.0.15       | 139 KB    | ################################################################################################################# | 100% 
+python-dateutil-2.8. | 215 KB    | ################################################################################################################# | 100% 
+numpy-1.18.1         | 5 KB      | ################################################################################################################# | 100% 
+six-1.14.0           | 26 KB     | ################################################################################################################# | 100% 
+pandas-1.0.3         | 7.9 MB    | ################################################################################################################# | 100% 
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ python ml_model.py 
+Traceback (most recent call last):
+  File "ml_model.py", line 2, in <module>
+    from sklearn.metrics import confusion_matrix, accuracy_score, f1_score, precision_score, recall_score, matthews_corrcoef
+ModuleNotFoundError: No module named 'sklearn'
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ conda install sklearn
+Collecting package metadata (current_repodata.json): done
+Solving environment: failed with initial frozen solve. Retrying with flexible solve.
+Collecting package metadata (repodata.json): done
+Solving environment: failed with initial frozen solve. Retrying with flexible solve.
+
+PackagesNotFoundError: The following packages are not available from current channels:
+
+  - sklearn
+
+Current channels:
+
+  - https://repo.anaconda.com/pkgs/main/osx-64
+  - https://repo.anaconda.com/pkgs/main/noarch
+  - https://repo.anaconda.com/pkgs/r/osx-64
+  - https://repo.anaconda.com/pkgs/r/noarch
+
+To search for alternate channels that may provide the conda package you're
+looking for, navigate to
+
+    https://anaconda.org
+
+and use the search bar at the top of the page.
+
+
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ python ml_model.py 
+Traceback (most recent call last):
+  File "ml_model.py", line 2, in <module>
+    from sklearn.metrics import confusion_matrix, accuracy_score, f1_score, precision_score, recall_score, matthews_corrcoef
+ModuleNotFoundError: No module named 'sklearn'
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ conda install -c intel scikit-learn
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /opt/anaconda3/envs/MLOPS
+
+  added / updated specs:
+    - scikit-learn
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    certifi-2018.1.18          |           py36_2         143 KB  intel
+    daal-2020.1                |        intel_216        60.9 MB  intel
+    daal4py-2019.5             |   py36ha68da19_4        12.5 MB  intel
+    icc_rt-2020.1              |        intel_216         8.1 MB  intel
+    intelpython-2020.1         |                0         501 KB  intel
+    scikit-learn-0.20.0        |          py36_17         6.8 MB  intel
+    scipy-1.4.1                |   py36h9fa6033_0        13.0 MB
+    tbb-2020.2                 |        intel_216         312 KB  intel
+    ------------------------------------------------------------
+                                           Total:       102.2 MB
+
+The following NEW packages will be INSTALLED:
+
+  daal               intel/osx-64::daal-2020.1-intel_216
+  daal4py            intel/osx-64::daal4py-2019.5-py36ha68da19_4
+  icc_rt             intel/osx-64::icc_rt-2020.1-intel_216
+  intelpython        intel/osx-64::intelpython-2020.1-0
+  scikit-learn       intel/osx-64::scikit-learn-0.20.0-py36_17
+  scipy              pkgs/main/osx-64::scipy-1.4.1-py36h9fa6033_0
+  tbb                intel/osx-64::tbb-2020.2-intel_216
+
+The following packages will be SUPERSEDED by a higher-priority channel:
+
+  certifi              pkgs/main::certifi-2020.4.5.1-py36_0 --> intel::certifi-2018.1.18-py36_2
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages
+intelpython-2020.1   | 501 KB    | ################################################################################################################# | 100% 
+daal-2020.1          | 60.9 MB   | ################################################################################################################# | 100% 
+certifi-2018.1.18    | 143 KB    | ################################################################################################################# | 100% 
+icc_rt-2020.1        | 8.1 MB    | ################################################################################################################# | 100% 
+scipy-1.4.1          | 13.0 MB   | ################################################################################################################# | 100% 
+tbb-2020.2           | 312 KB    | ################################################################################################################# | 100% 
+daal4py-2019.5       | 12.5 MB   | ################################################################################################################# | 100% 
+scikit-learn-0.20.0  | 6.8 MB    | ################################################################################################################# | 100% 
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ python ml_model.py 
+0.8666666666666667
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 888 bytes | 888.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/fjvigo/MLOPS.git
+   e9e2cf1..f47b58d  master -> master
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git branch develop
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git branch
+  develop
+* master
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git branch develop
+fatal: A branch named 'develop' already exists.
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git checkout develop
+Switched to branch 'develop'
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git branch
+* develop
+  master
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ ls
+example.py	ml_model.py
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ vim ml_model.py 
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ python ml_model.py 
+0.9
+/opt/anaconda3/envs/MLOPS/lib/python3.6/site-packages/sklearn/linear_model/logistic.py:436: FutureWarning: Default solver will be changed to 'lbfgs' in 0.22. Specify a solver to silence this warning.
+  FutureWarning)
+Traceback (most recent call last):
+  File "ml_model.py", line 35, in <module>
+    initial_lm_mod.fit(X_train, Y_train)
+  File "/opt/anaconda3/envs/MLOPS/lib/python3.6/site-packages/sklearn/linear_model/logistic.py", line 1342, in fit
+    solver = _check_solver(self.solver, self.penalty, self.dual)
+  File "/opt/anaconda3/envs/MLOPS/lib/python3.6/site-packages/sklearn/linear_model/logistic.py", line 446, in _check_solver
+    " got %s." % (all_penalties, penalty))
+ValueError: Logistic Regression supports only penalties in ['l1', 'l2'], got none.
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ vim ml_model.py 
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ python ml_model.py 
+0.8666666666666667
+/opt/anaconda3/envs/MLOPS/lib/python3.6/site-packages/sklearn/linear_model/logistic.py:436: FutureWarning: Default solver will be changed to 'lbfgs' in 0.22. Specify a solver to silence this warning.
+  FutureWarning)
+/opt/anaconda3/envs/MLOPS/lib/python3.6/site-packages/sklearn/linear_model/logistic.py:463: FutureWarning: Default multi_class will be changed to 'auto' in 0.22. Specify the multi_class option to silence this warning.
+  "this warning.", FutureWarning)
+The linear model has an accuracy of = 0.8000
+The decision tree outperforms the linear model by = 0.0667
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ vim ml_model.py 
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ python ml_model.py 
+0.9
+/opt/anaconda3/envs/MLOPS/lib/python3.6/site-packages/sklearn/linear_model/logistic.py:809: ConvergenceWarning: lbfgs failed to converge. Increase the number of iterations.
+  "of iterations.", ConvergenceWarning)
+The linear model has an accuracy of = 0.8667
+The decision tree outperforms the linear model by = 0.0333
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ vim ml_model.py 
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ python ml_model.py 
+0.8666666666666667
+/opt/anaconda3/envs/MLOPS/lib/python3.6/site-packages/sklearn/linear_model/logistic.py:436: FutureWarning: Default solver will be changed to 'lbfgs' in 0.22. Specify a solver to silence this warning.
+  FutureWarning)
+/opt/anaconda3/envs/MLOPS/lib/python3.6/site-packages/sklearn/linear_model/logistic.py:463: FutureWarning: Default multi_class will be changed to 'auto' in 0.22. Specify the multi_class option to silence this warning.
+  "this warning.", FutureWarning)
+The linear model has an accuracy of = 0.8000
+The decision tree outperforms the linear model by = 0.0667
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git status
+On branch develop
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   ml_model.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git branch
+* develop
+  master
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git add .
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git commit -m "Adding a Linear Model to compare results with DT"
+[develop 5a3b2a2] Adding a Linear Model to compare results with DT
+ 1 file changed, 8 insertions(+)
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git status
+On branch develop
+nothing to commit, working tree clean
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git log --oneline
+5a3b2a2 (HEAD -> develop) Adding a Linear Model to compare results with DT
+f47b58d (origin/master, master) Creating a simple model using Iris-Setosa dataset
+e9e2cf1 Initial example: Print First Example
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git merge develop
+Updating f47b58d..5a3b2a2
+Fast-forward
+ ml_model.py | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 542 bytes | 542.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/fjvigo/MLOPS.git
+   f47b58d..5a3b2a2  master -> master
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ script output.txt
+Script started, output file is output.txt
+bash-3.2$ 
+bash-3.2$ exit
+exit
+
+Script done, output file is output.txt
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ command > output2.txt
+(MLOPS) MacBook-Pro-de-Francisco:Work franciscovigo$ 
